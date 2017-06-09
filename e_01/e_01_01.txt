@@ -1,0 +1,14 @@
+演習1-1
+DBMSの情報確認
+作成日：2017年7月9日
+作成者：浅田　知嗣
+
+MySQL
+使用バージョン：5.0.11
+最新バージョン：5.5.56
+マニュアル：https://dev.mysql.com/doc/refman/5.6/ja/
+
+PostgreSQL
+使用バージョン：9.6.0
+最新バージョン：9.6.3
+マニュアル：https://www.postgresql.jp/document/pg960doc/index.html
