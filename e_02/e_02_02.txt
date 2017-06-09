@@ -1,0 +1,14 @@
+演習2-2
+ハードウェアリソースの情報取得
+作成日：2017年6月9日
+作成者：浅田　知嗣
+
+ハードウェアリソースの情報を取得するコマンドは以下のとおりである。
+windows
+SystemInfo /fo list
+
+Linux
+dmidecode
+
+Mac OS X
+system_profiler
