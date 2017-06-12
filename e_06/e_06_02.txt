@@ -1,0 +1,20 @@
+演習6-2
+インデックスの再編成
+作成日：2017年6月12日
+作成者：浅田　知嗣
+
+インデックスを再編成するコマンドは以下のとおりである。
+PostgreSQL
+REINDEX インデックス名
+
+Oracle
+ALTER INDEX インデックス名 REBUILD
+
+SQLserver
+ALTER INDEX インデックス名 REBUILD
+
+mySQL
+OPTIMIZE TABLE テーブル名
+
+DB2
+REORG INDEX インデックス名
