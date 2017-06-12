@@ -1,0 +1,95 @@
+‰‰K5-1
+³‹K‰»‚³‚ê‚½ƒe[ƒuƒ‹‚É‘Î‚·‚éSQL
+ì¬“úF2017”N6ŒŽ12“ú
+ì¬ŽÒFó“c@’mŽk
+
+¤•i•ª—Þ‚²‚Æ‚Ì¤•i”B
+
+SELECT
+p.category_ID AS ¤•i•ª—ÞƒR[ƒh,
+COUNT(p.category_ID) AS ¤•i”,
+c.category AS •ª—Þ–¼
+
+FROM
+product AS p
+
+INNER JOIN
+category AS c
+
+ON
+p.category_ID = c.category_ID
+
+GROUP BY
+p.category_ID,
+c.category
+
+ORDER BY
+p.category_ID ASC
+;
+
+ŽxŽÐ/Žx“X•Ê‚ÌŽæ‚èˆµ‚¢¤•iˆê——B
+
+SELECT
+bo.branch_office AS ŽxŽÐ–¼,
+b.branch AS Žx“X–¼,
+p.product AS ¤•i–¼
+
+FROM
+company AS c
+
+INNER JOIN
+branch_office AS bo
+
+ON
+c.branch_office_ID = bo.branch_office_ID
+
+INNER JOIN
+branch AS b
+
+ON
+c.branch_office_ID = b.branch_office_ID
+AND
+c.branch_ID = b.branch_ID
+
+INNER JOIN
+product AS p
+
+ON
+c.product_ID = p.product_ID
+;
+
+‚à‚Á‚Æ‚àŽæˆµ¤•i”‚ª‘½‚¢Žx“X‚ÌŽx“XƒR[ƒh‚Æ¤•i”B
+
+SELECT
+branch_office_ID AS ŽxŽÐƒR[ƒh,
+branch_ID AS Žx“XƒR[ƒh,
+COUNT(*) AS ¤•i”
+
+FROM
+company
+
+GROUP BY
+branch_office_ID,
+branch_ID
+
+HAVING
+COUNT(*)
+>=
+ (
+ SELECT
+ MAX(TMP)
+
+ FROM
+   (
+   SELECT
+   COUNT(*) AS TMP
+
+   FROM
+   company
+
+   GROUP BY
+   branch_office_ID,
+   branch_ID
+   )
+ )
+;
